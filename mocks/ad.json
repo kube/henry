@@ -1,0 +1,118 @@
+{
+  "settings": {
+    "values": {
+      "animations": { "expand": 0, "collapse": 0.5 },
+      "pageId": 0,
+      "placementFormat": "inread",
+      "placementId": 27829,
+      "brandLogoUrl": null,
+      "allowedPlayer": "any",
+      "threshold": 50
+    },
+    "slot": { "selector": "#content p" },
+    "components": {
+      "soundButton": {
+        "display": true,
+        "countdown": 0,
+        "type": "equalizer"
+      },
+      "slider": { "closeButtonDisplay": false },
+      "closeButton": { "display": false, "countdown": 0 },
+      "endScreen": {
+        "replayButton": { "text": "Rejouer la vidéo" },
+        "callButton": {
+          "type": "learnMore",
+          "text": "En savoir plus"
+        },
+        "autoClose": false,
+        "countdown": 6,
+        "type": "simple"
+      },
+      "brandLogo": { "display": false },
+      "callButton": {
+        "display": true,
+        "countdown": 3,
+        "text": "En savoir plus"
+      },
+      "credits": {
+        "display": true,
+        "text": "[inRead] invented by Teads",
+        "link": "http://inread-experience.teads.tv"
+      },
+      "label": { "display": true, "text": "PUBLICITÉ" }
+    },
+    "behaviors": {
+      "soundStart": { "type": "mute" },
+      "soundMute": "threshold",
+      "soundOver": "over",
+      "onlyNative": false,
+      "end": "endscreen",
+      "launch": "auto",
+      "videoStart": "threshold",
+      "videoPause": "threshold"
+    }
+  },
+  "ads": [
+    {
+      "settings": {
+        "values": {
+          "animations": { "expand": 0, "collapse": 0.5 },
+          "pageId": 0,
+          "placementFormat": "inread",
+          "placementId": 78279,
+          "brandLogoUrl": null,
+          "allowedPlayer": "any",
+          "threshold": 50
+        },
+        "components": {
+          "soundButton": {
+            "display": true,
+            "countdown": 0,
+            "type": "equalizer"
+          },
+          "slider": { "closeButtonDisplay": false },
+          "closeButton": {
+            "display": false,
+            "countdown": 0
+          },
+          "endScreen": {
+            "replayButton": { "text": "Rejouer la vidéo" },
+            "callButton": {
+              "type": "learnMore",
+              "text": "En savoir plus"
+            },
+            "autoClose": false,
+            "countdown": 6,
+            "type": "simple"
+          },
+          "brandLogo": { "display": false },
+          "callButton": {
+            "display": true,
+            "countdown": 3,
+            "text": "En savoir plus"
+          },
+          "credits": {
+            "display": true,
+            "text": "[inRead] invented by Teads",
+            "link": "http://inread-experience.teads.tv"
+          },
+          "label": { "display": true, "text": "PUBLICITÉ" }
+        },
+        "behaviors": {
+          "soundStart": { "type": "mute" },
+          "soundMute": "threshold",
+          "soundOver": "over",
+          "onlyNative": false,
+          "end": "endscreen",
+          "launch": "auto",
+          "videoStart": "threshold",
+          "videoPause": "threshold"
+        }
+      },
+      "type": "VastXml",
+      "content":
+        "<VAST version=\"3.0\"><Ad id=\"24054\"><InLine><AdSystem>Teads Technology</AdSystem><AdTitle>inRead Jaguar Insertion</AdTitle><Error><![CDATA[https://t.teads.tv/track?action=error-vast&impid=1&be=1&pid=47405&cid=106094&code=[ERRORCODE]&gid=50221&vid=17189a37-752e-489c-941d-91f4a905c1c5&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Error><Impression><![CDATA[https://t.teads.tv/track?vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&action=impression&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Impression><Creatives><Creative id=\"106094\"><Linear><Duration>00:00:10</Duration><TrackingEvents><Tracking event=\"start\"><![CDATA[https://t.teads.tv/track?action=start&cph=[CONTENTPLAYHEAD]&revenue_curr=EUR&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cost_curr=EUR&cid=106094&pid=47405&cost=x5x6w4/yp71xIcTGH1bCnMZ8&revenue=86QGDZ4KdBQiCboBQRSJnBU1&be=1&impid=1&analyticsOnly=false&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"firstQuartile\"><![CDATA[https://t.teads.tv/track?action=firstQuartile&cph=[CONTENTPLAYHEAD]&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"midpoint\"><![CDATA[https://t.teads.tv/track?action=midpoint&cph=[CONTENTPLAYHEAD]&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"thirdQuartile\"><![CDATA[https://t.teads.tv/track?action=thirdQuartile&cph=[CONTENTPLAYHEAD]&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"complete\"><![CDATA[https://t.teads.tv/track?action=complete&cph=[CONTENTPLAYHEAD]&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"pause\"><![CDATA[https://t.teads.tv/track?action=pause&cph=[CONTENTPLAYHEAD]&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"resume\"><![CDATA[https://t.teads.tv/track?action=resume&cph=[CONTENTPLAYHEAD]&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"mute\"><![CDATA[https://t.teads.tv/track?action=mute&cph=[CONTENTPLAYHEAD]&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"unmute\"><![CDATA[https://t.teads.tv/track?action=unmute&cph=[CONTENTPLAYHEAD]&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"expand\"><![CDATA[https://t.teads.tv/track?action=expand&cph=[CONTENTPLAYHEAD]&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"collapse\"><![CDATA[https://t.teads.tv/track?action=collapse&cph=[CONTENTPLAYHEAD]&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"rewind\"><![CDATA[https://t.teads.tv/track?action=rewind&cph=[CONTENTPLAYHEAD]&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"skip\"><![CDATA[https://t.teads.tv/track?action=skip&cph=[CONTENTPLAYHEAD]&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"close\"><![CDATA[https://t.teads.tv/track?action=close&cph=[CONTENTPLAYHEAD]&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"progress\" offset=\"00:00:01\"><![CDATA[https://t.teads.tv/track?action=progress-1&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"progress\" offset=\"00:00:02\"><![CDATA[https://t.teads.tv/track?action=progress-2&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"progress\" offset=\"00:00:03\"><![CDATA[https://t.teads.tv/track?action=progress-3&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"progress\" offset=\"00:00:04\"><![CDATA[https://t.teads.tv/track?action=progress-4&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"progress\" offset=\"00:00:05\"><![CDATA[https://t.teads.tv/track?action=progress-5&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"progress\" offset=\"00:00:06\"><![CDATA[https://t.teads.tv/track?action=progress-6&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"progress\" offset=\"00:00:07\"><![CDATA[https://t.teads.tv/track?action=progress-7&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"progress\" offset=\"00:00:08\"><![CDATA[https://t.teads.tv/track?action=progress-8&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"progress\" offset=\"00:00:09\"><![CDATA[https://t.teads.tv/track?action=progress-9&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking><Tracking event=\"progress\" offset=\"00:00:10\"><![CDATA[https://t.teads.tv/track?action=progress-10&vid=17189a37-752e-489c-941d-91f4a905c1c5&gid=50221&cid=106094&pid=47405&be=1&impid=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad]]></Tracking></TrackingEvents><VideoClicks><ClickThrough><![CDATA[http://teads.tv]]></ClickThrough><ClickTracking><![CDATA[https://t.teads.tv/track?action=click&vid=17189a37-752e-489c-941d-91f4a905c1c5&cid=106094&gid=50221&pid=47405&1481199224444&be=1&auctid=0c3a2080-e61b-42fe-a975-1895387463ad&cph=[CONTENTPLAYHEAD]]]></ClickTracking></VideoClicks><MediaFiles><MediaFile id=\"1044283\" delivery=\"progressive\" type=\"video/mp4\" bitrate=\"692\" width=\"1280\" height=\"720\" scalable=\"true\" maintainAspectRatio=\"true\"><![CDATA[https://cdn2.teads.tv/scala/106094/29f983696717e42de59b6b12bdc51338/720.mp4]]></MediaFile><MediaFile id=\"1044284\" delivery=\"progressive\" type=\"video/mp4\" bitrate=\"683\" width=\"1138\" height=\"640\" scalable=\"true\" maintainAspectRatio=\"true\"><![CDATA[https://cdn2.teads.tv/scala/106094/29f983696717e42de59b6b12bdc51338/640.mp4]]></MediaFile><MediaFile id=\"1044285\" delivery=\"progressive\" type=\"video/mp4\" bitrate=\"618\" width=\"854\" height=\"480\" scalable=\"true\" maintainAspectRatio=\"true\"><![CDATA[https://cdn2.teads.tv/scala/106094/29f983696717e42de59b6b12bdc51338/480.mp4]]></MediaFile><MediaFile id=\"1044286\" delivery=\"progressive\" type=\"video/mp4\" bitrate=\"416\" width=\"568\" height=\"320\" scalable=\"true\" maintainAspectRatio=\"true\"><![CDATA[https://cdn2.teads.tv/scala/106094/29f983696717e42de59b6b12bdc51338/320.mp4]]></MediaFile><MediaFile id=\"1044287\" delivery=\"progressive\" type=\"video/mp4\" bitrate=\"231\" width=\"426\" height=\"240\" scalable=\"true\" maintainAspectRatio=\"true\"><![CDATA[https://cdn2.teads.tv/scala/106094/29f983696717e42de59b6b12bdc51338/240.mp4]]></MediaFile><MediaFile id=\"1044288\" delivery=\"progressive\" type=\"video/mp4\" bitrate=\"779\" width=\"1024\" height=\"576\" scalable=\"true\" maintainAspectRatio=\"true\"><![CDATA[https://cdn2.teads.tv/scala/106094/29f983696717e42de59b6b12bdc51338/720.mp4]]></MediaFile><MediaFile id=\"1044289\" delivery=\"progressive\" type=\"video/mp4\" bitrate=\"751\" width=\"960\" height=\"540\" scalable=\"true\" maintainAspectRatio=\"true\"><![CDATA[https://cdn2.teads.tv/scala/106094/29f983696717e42de59b6b12bdc51338/640.mp4]]></MediaFile><MediaFile id=\"1044290\" delivery=\"progressive\" type=\"video/mp4\" bitrate=\"321\" width=\"480\" height=\"270\" scalable=\"true\" maintainAspectRatio=\"true\"><![CDATA[https://cdn2.teads.tv/scala/106094/29f983696717e42de59b6b12bdc51338/320.mp4]]></MediaFile><MediaFile id=\"1044291\" delivery=\"progressive\" type=\"video/mpeg\" bitrate=\"396\" width=\"1920\" height=\"1080\" scalable=\"true\" maintainAspectRatio=\"true\"><![CDATA[https://cdn2.teads.tv/scala/106094/44d9a2385a511621df88238aaa0e9051/300.mpeg]]></MediaFile><MediaFile id=\"1044292\" delivery=\"progressive\" type=\"video/mpeg\" bitrate=\"596\" width=\"1920\" height=\"1080\" scalable=\"true\" maintainAspectRatio=\"true\"><![CDATA[https://cdn2.teads.tv/scala/106094/44d9a2385a511621df88238aaa0e9051/500.mpeg]]></MediaFile><MediaFile id=\"1044293\" delivery=\"progressive\" type=\"video/mpeg\" bitrate=\"796\" width=\"1920\" height=\"1080\" scalable=\"true\" maintainAspectRatio=\"true\"><![CDATA[https://cdn2.teads.tv/scala/106094/44d9a2385a511621df88238aaa0e9051/700.mpeg]]></MediaFile><MediaFile id=\"1044294\" delivery=\"progressive\" type=\"video/mpeg\" bitrate=\"1096\" width=\"1920\" height=\"1080\" scalable=\"true\" maintainAspectRatio=\"true\"><![CDATA[https://cdn2.teads.tv/scala/106094/44d9a2385a511621df88238aaa0e9051/1000.mpeg]]></MediaFile></MediaFiles></Linear></Creative></Creatives><Extensions></Extensions></InLine></Ad></VAST>",
+      "scenario_id": 6974
+    }
+  ]
+}

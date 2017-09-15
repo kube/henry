@@ -1,0 +1,65 @@
+{
+  "title": "JSON Schema for Teads Rich Ad Server Response",
+  "definitions": {
+    "adDefinition": {
+      "properties": {
+        "type": {
+          "description": "VAST content type",
+          "type": "string",
+          "anyOf": [{ "enum": ["VastURL", "VastXML"] }]
+        },
+        "content": {
+          "description": "VAST URL or content",
+          "type": "string"
+        },
+        "format": {
+          "description": "Format name",
+          "type": "string"
+        },
+        "settings": {
+          "description": "PID etc",
+          "type": "object",
+          "$ref": "#/definitions/adSettingsDefinition"
+        },
+        "ad_source_id": { "type": "number" },
+        "connection_id": { "type": "number" },
+        "insertion_id": { "type": "number" },
+        "dsp_campaign_id": {
+          "type": "string",
+          "description": "OpenRTB Spec"
+        },
+        "dsp_creative_id": {
+          "type": "string",
+          "description": "OpenRTB Spec"
+        },
+        "scenario_id": {
+          "type": "number"
+        }
+      }
+    },
+    "adSettingsDefinition": {
+      "properties": {
+        "values": {
+          "description":
+            "Values for the format (threshold, css rules...)",
+          "type": "object"
+          //TODO: IAdValues
+        },
+
+        "components": {
+          "description":
+            "Collection of components (mute, skip, label...)",
+          "type": "string"
+          //TODO: IAdComponents
+        },
+
+        "behaviors": {
+          "description":
+            "Collection of behaviors (launch mode, click actions, end mode...)"
+          //TODO: IAdBehaviors
+        }
+      }
+    }
+  },
+  "properties": {}
+}
