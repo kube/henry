@@ -1,7 +1,9 @@
 {
   "title": "JSON Schema for Teads Rich Ad Server Response",
+
   "definitions": {
     "adDefinition": {
+      "required": ["type", "content"],
       "properties": {
         "type": {
           "description": "VAST content type",
@@ -37,29 +39,277 @@
         }
       }
     },
+
+    "adValuesDefinition": {
+      "required": [
+        "pageId",
+        "placementId",
+        "placementFormat"
+      ],
+      "properties": {
+        "pageId": { "type": "number" },
+        "placementId": { "type": "number" },
+        "placementFormat": {
+          "type": "string",
+          "default": "inread",
+          "oneOf": [
+            {
+              "enum": ["inread", "inboard"]
+            }
+          ]
+        },
+        "threshold": { "type": "number" },
+        "volume": {
+          "type": "object",
+          "properties": {
+            "main": { "type": "number" },
+            "mouseover": { "type": "number" },
+            "fadeDuration": { "type": "number" }
+          }
+        },
+        "allowedPlayer": { "type": "string" },
+        "brandLogoUrl": { "type": ["string", "null"] },
+        "animations": {
+          "type": "object",
+          "properties": {
+            "expand": {
+              "type": "number",
+              "description":
+                "Duration of animation in seconds"
+            },
+            "collapse": {
+              "type": "number",
+              "description":
+                "Duration of animation in seconds"
+            }
+          }
+        },
+        "adType": {
+          "type": "string",
+          "oneOf": [
+            {
+              "enum": ["display", "native", "parallax"],
+              "default": "native"
+            }
+          ]
+        },
+        "vtpEvent": { "type": "string" }
+      }
+    },
+
+    "adComponentsDefinition": {
+      "properties": {
+        "closeButton": {
+          "type": "object",
+          "properties": {
+            "display": { "type": "boolean" },
+            "countdown": { "type": "number" }
+          }
+        },
+        "soundButton": {
+          "type": "object",
+          "properties": {
+            "display": { "type": "boolean" },
+            "countdown": { "type": "number" },
+            "type": { "type": "string" }
+          }
+        },
+        "callButton": {
+          "type": "object",
+          "properties": {
+            "display": { "type": "boolean" },
+            "countdown": { "type": "number" },
+            "text": { "type": "string" }
+          }
+        },
+        "timer": { "type": "boolean" },
+        "progressBar": { "type": "boolean" },
+        "label": {
+          "type": "object",
+          "properties": {
+            "display": { "type": "boolean" },
+            "text": { "type": "string" },
+            "html": { "type": "string" }
+          }
+        },
+        "credits": {
+          "type": "object",
+          "properties": {
+            "display": { "type": "boolean" },
+            "text": { "type": "string" },
+            "link": { "type": "string" }
+          }
+        },
+        "endScreen": {
+          "type": "object",
+          "properties": {
+            "display": { "type": "boolean" },
+            "replayButton": {
+              "type": "object",
+              "properties": {
+                "text": { "type": "string" }
+              }
+            },
+            "callButton": {
+              "type": "object",
+              "properties": {
+                "text": { "type": "string" },
+                "type": { "type": "string" }
+              }
+            },
+            "autoClose": { "type": "boolean" },
+            "countdown": { "type": "number" },
+            "type": { "type": "string" }
+          }
+        },
+        "brandLogo": {
+          "type": "object",
+          "properties": {
+            "display": { "type": "boolean" }
+          }
+        },
+        "slider": {
+          "type": "object",
+          "properties": {
+            "closeButtonDisplay": { "type": "boolean" }
+          }
+        }
+      }
+    },
+
+    "adBehaviorsDefinition": {
+      "properties": {
+        "launch": {
+          "type": "string",
+          "description": "When/How do we display the ad?",
+          "anyOf": [
+            {
+              "enum": ["auto", "threshold"]
+            }
+          ]
+        },
+        "videoStart": {
+          "type": "string",
+          "description":
+            "When do we start the video? (happens once)",
+          "anyOf": [
+            {
+              "enum": ["auto", "click", "threshold"]
+            }
+          ]
+        },
+
+        "soundStart": {
+          "type": "object",
+          "properties": {
+            "type": { "type": "string" },
+            "countdown": { "type": "number" }
+          }
+        },
+        "videoPause": {
+          "type": "string",
+          "description":
+            "When do we pause automatically the video?",
+          "anyOf": [
+            {
+              "enum": ["no", "threshold"]
+            }
+          ]
+        },
+        "soundMute": {
+          "type": "string",
+          "description":
+            "When do we automatically mute the sound?",
+          "anyOf": [
+            {
+              "enum": ["no", "threshold"]
+            }
+          ]
+        },
+        "playerClick": {
+          "type": "string",
+          "description":
+            "What shall we do on a player click/tap?",
+          "anyOf": [
+            {
+              "enum": ["fullscreen", "click"]
+            }
+          ]
+        },
+        "end": {
+          "type": "string",
+          "description":
+            "What shall we do when video finishes?",
+          "anyOf": [
+            {
+              "enum": ["collapse", "endscreen"]
+            }
+          ]
+        },
+        "soundOver": {
+          "type": "string",
+          "description":
+            "[Desktop only] behavior of the sound when mouse over",
+          "anyOf": [
+            {
+              "enum": ["off", "over", "onceOver"]
+            }
+          ]
+        },
+        "smartPosition": {
+          "type": "object",
+          "properties": {
+            "top": { "type": "boolean" },
+            "corner": { "type": "boolean" }
+          }
+        },
+        "onlyNative": {
+          "type": "boolean",
+          "description":
+            "[Desktop only] Should the format be display only natively (in the content)"
+        },
+        "useMultipleBillable": {
+          "type": "boolean",
+          "description":
+            "Activate the multibillable feature (remove billable into tracking url at second call)"
+        }
+      }
+    },
+
     "adSettingsDefinition": {
       "properties": {
         "values": {
           "description":
             "Values for the format (threshold, css rules...)",
-          "type": "object"
-          //TODO: IAdValues
+          "type": "object",
+          "$ref": "#/definitions/adValuesDefinition"
         },
 
         "components": {
           "description":
             "Collection of components (mute, skip, label...)",
-          "type": "string"
-          //TODO: IAdComponents
+          "type": "object",
+          "$ref": "#/definitions/adComponentsDefinition"
         },
 
         "behaviors": {
           "description":
-            "Collection of behaviors (launch mode, click actions, end mode...)"
-          //TODO: IAdBehaviors
+            "Collection of behaviors (launch mode, click actions, end mode...)",
+          "type": "object",
+          "$ref": "#/definitions/adBehaviorsDefinition"
         }
       }
     }
   },
-  "properties": {}
+
+  "type": "object",
+  "properties": {
+    "ads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/definitions/adDefinition"
+      }
+    }
+  }
 }
