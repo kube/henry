@@ -5,31 +5,18 @@ import * as httpProxy from 'http-proxy'
 import * as serveStatic from 'serve-static'
 import * as finalHandler from 'finalhandler'
 
-import { Url, parse as parseUrl } from 'url'
+import { parse as parseUrl } from 'url'
+
+import {
+  getTarget,
+  isAdRequestUrl,
+  isDailyBugleRequest,
+  isFormatFrameworkRequestUrl,
+  isTagRequestUrl
+} from './lib'
 
 const HTTP_PORT = 4242
 const proxy = httpProxy.createProxyServer({})
-
-const isTeadsRequestUrl = (url: Url) =>
-  /teads\.tv$/.test(url.hostname!)
-
-// const isFormatFrameworkRequestUrl = (url: Url) =>
-//   isTeadsRequestUrl(url) &&
-//     /^/.test(url.path!)
-
-const isDailyBugleRequest = (url: Url) =>
-  /dailybugle\.com$/.test(url.hostname!)
-
-const isTagRequestUrl = (url: Url) =>
-  isTeadsRequestUrl(url) &&
-  /^\/page\/[0-9]+\/tag/.test(url.path!)
-
-const isAdRequestUrl = (url: Url) =>
-  isTeadsRequestUrl(url) &&
-  /^\/page\/[0-9]+\/ad/.test(url.path!)
-
-const getTarget = ({ protocol, host }: Url) =>
-  protocol + '//' + host
 
 const serve = serveStatic('websites/dailybugle', {
   index: ['index.html']
@@ -54,7 +41,20 @@ http
           createReadStream(
             join(__dirname, '../mocks/tag.js')
           ).pipe(res)
-      else if (isAdRequestUrl(url))
+      else if (isFormatFrameworkRequestUrl(url)) {
+        console.log(':: FORMAT FRAMEWORK REQUEST')
+        console.log(url.pathname)
+
+        const fileName = /\.js\.map$/.test(url.pathname!)
+          ? 'teads-format.js.map'
+          : 'teads-format.js'
+
+        console.log(fileName)
+
+        createReadStream(
+          `/Users/cfeijoo/Code/service-web-formats/dist/format/${fileName}`
+        ).pipe(res)
+      } else if (isAdRequestUrl(url))
         console.log(':: AD REQUEST URL') ||
           createReadStream(
             join(__dirname, '../mocks/ad.json')
