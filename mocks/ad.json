@@ -1,13 +1,13 @@
 {
   "ads": [
     {
-      "type": "VastURL",
+      "type": "VastUrl",
       "content": "http://be-get.teads.tv/get/1550",
       "settings": {
         "values": {
           "animations": { "expand": 0, "collapse": 0.5 },
           "pageId": 15743,
-          "placementFormat": "inread",
+          "placementFormat": "inboard",
           "placementId": 27829,
           "allowedPlayer": "any",
           "threshold": 50
@@ -54,7 +54,10 @@
           "end": "endscreen",
           "launch": "auto",
           "videoStart": "threshold",
-          "videoPause": "threshold"
+          "videoPause": "threshold",
+          "smartPosition": {
+            "top": true
+          }
         }
       },
       "scenario_id": 6974
