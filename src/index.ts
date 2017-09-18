@@ -2,6 +2,8 @@ import { createReadStream } from 'fs'
 import { join } from 'path'
 import * as http from 'http'
 import * as httpProxy from 'http-proxy'
+import * as serveStatic from 'serve-static'
+import * as finalHandler from 'finalhandler'
 
 import { Url, parse as parseUrl } from 'url'
 
@@ -9,11 +11,14 @@ const HTTP_PORT = 4242
 const proxy = httpProxy.createProxyServer({})
 
 const isTeadsRequestUrl = (url: Url) =>
-  /teads\.tv$/.test(url.host!)
+  /teads\.tv$/.test(url.hostname!)
 
 // const isFormatFrameworkRequestUrl = (url: Url) =>
 //   isTeadsRequestUrl(url) &&
 //     /^/.test(url.path!)
+
+const isDailyBugleRequest = (url: Url) =>
+  /dailybugle\.com$/.test(url.hostname!)
 
 const isTagRequestUrl = (url: Url) =>
   isTeadsRequestUrl(url) &&
@@ -23,12 +28,12 @@ const isAdRequestUrl = (url: Url) =>
   isTeadsRequestUrl(url) &&
   /^\/page\/[0-9]+\/ad/.test(url.path!)
 
-const getTarget = ({ protocol, host, port }: Url) => {
-  const target = /:/.test(host!)
-    ? protocol + '//' + host
-    : protocol + '//' + host + (port ? ':' + port : '')
-  return target
-}
+const getTarget = ({ protocol, host }: Url) =>
+  protocol + '//' + host
+
+const serve = serveStatic('websites/dailybugle', {
+  index: ['index.html']
+})
 
 http
   .createServer((req, res) => {
@@ -54,8 +59,16 @@ http
           createReadStream(
             join(__dirname, '../mocks/ad.json')
           ).pipe(res)
+      else if (isDailyBugleRequest(url))
+        console.log(':: DAILY BUGLE') ||
+          serve(
+            req as any,
+            res as any,
+            finalHandler(req, res)
+          )
       else
-        console.log(getTarget(url)) ||
+        console.log('>> ' + getTarget(url)) ||
+          console.log('       ' + url.path) ||
           proxy.web(
             req,
             res,

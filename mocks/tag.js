@@ -8,12 +8,9 @@
     w.teads
       .page(15743)
       .placement(27829, {
-        css: 'padding: 13px 0px 0px 16px;',
-        format: 'inboard',
-        parentWindow: false,
+        format: 'inread',
         slot: {
-          insertBefore: true,
-          btf: true,
+          btf: false,
           selector: 'p',
           minimum: 1
         }

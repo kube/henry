@@ -1,0 +1,48 @@
+body {
+  margin-top: 76px;
+  font-family: 'Noto Serif', sans-serif;
+}
+
+.header {
+  text-align: center;
+}
+
+.header .logo {
+  width: 94%;
+  max-width: 650px;
+}
+
+.page {
+  width: 85%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.page h1 {
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-family: 'Arvo', sans-serif;
+  padding: 2vw 1vw;
+  letter-spacing: -0.2vw;
+  text-transform: uppercase;
+  font-size: 9vw;
+  line-height: 8.3vw;
+  text-shadow: 0.4vw 0.4vw 0 #cc0000;
+}
+
+.page p {
+  text-align: justify;
+  font-family: 'Times';
+  font-size: 22px;
+}
+
+.article-first-capital {
+  float: left;
+  font-family: 'Arvo', sans-serif;
+  font-size: 76px;
+  line-height: 67px;
+  padding: 0;
+  margin: 0;
+  margin-right: 7px;
+}

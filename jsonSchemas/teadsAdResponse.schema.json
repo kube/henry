@@ -1,6 +1,18 @@
 {
   "title": "JSON Schema for Teads Rich Ad Server Response",
 
+  "type": "object",
+  "required": ["ads"],
+  "properties": {
+    "ads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/definitions/adDefinition"
+      }
+    }
+  },
+
   "definitions": {
     "adDefinition": {
       "required": ["type", "content"],
@@ -8,11 +20,13 @@
         "type": {
           "description": "VAST content type",
           "type": "string",
-          "anyOf": [{ "enum": ["VastURL", "VastXML"] }]
+          "anyOf": [{ "enum": ["VastURL", "VastXML"] }],
+          "default": "VastURL"
         },
         "content": {
           "description": "VAST URL or content",
-          "type": "string"
+          "type": "string",
+          "default": "http://be-get.teads.tv/get/1550"
         },
         "format": {
           "description": "Format name",
@@ -36,6 +50,31 @@
         },
         "scenario_id": {
           "type": "number"
+        }
+      }
+    },
+
+    "adSettingsDefinition": {
+      "properties": {
+        "values": {
+          "description":
+            "Values for the format (threshold, css rules...)",
+          "type": "object",
+          "$ref": "#/definitions/adValuesDefinition"
+        },
+
+        "components": {
+          "description":
+            "Collection of components (mute, skip, label...)",
+          "type": "object",
+          "$ref": "#/definitions/adComponentsDefinition"
+        },
+
+        "behaviors": {
+          "description":
+            "Collection of behaviors (launch mode, click actions, end mode...)",
+          "type": "object",
+          "$ref": "#/definitions/adBehaviorsDefinition"
         }
       }
     },
@@ -273,42 +312,6 @@
           "description":
             "Activate the multibillable feature (remove billable into tracking url at second call)"
         }
-      }
-    },
-
-    "adSettingsDefinition": {
-      "properties": {
-        "values": {
-          "description":
-            "Values for the format (threshold, css rules...)",
-          "type": "object",
-          "$ref": "#/definitions/adValuesDefinition"
-        },
-
-        "components": {
-          "description":
-            "Collection of components (mute, skip, label...)",
-          "type": "object",
-          "$ref": "#/definitions/adComponentsDefinition"
-        },
-
-        "behaviors": {
-          "description":
-            "Collection of behaviors (launch mode, click actions, end mode...)",
-          "type": "object",
-          "$ref": "#/definitions/adBehaviorsDefinition"
-        }
-      }
-    }
-  },
-
-  "type": "object",
-  "properties": {
-    "ads": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "$ref": "#/definitions/adDefinition"
       }
     }
   }

@@ -8,11 +8,15 @@
     "start": "node dist/index"
   },
   "devDependencies": {
+    "@types/finalhandler": "^0.0.32",
     "@types/http-proxy": "^1.12.1",
     "@types/node": "^8.0.28",
+    "@types/serve-static": "^1.7.32",
     "typescript": "^2.5.2"
   },
   "dependencies": {
-    "http-proxy": "^1.16.2"
+    "finalhandler": "^1.0.5",
+    "http-proxy": "^1.16.2",
+    "serve-static": "^1.12.4"
   }
 }
