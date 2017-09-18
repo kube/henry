@@ -9,7 +9,22 @@
       "items": {
         "type": "object",
         "$ref": "#/definitions/adDefinition"
-      }
+      },
+      "default": [
+        {
+          "type": "VastUrl",
+          "content": "http://be-get.teads.tv/get/1550",
+          "settings": {
+            "values": {
+              "pageId": 0,
+              "placementId": 42,
+              "placementFormat": "inread"
+            },
+            "components": {},
+            "behaviors": {}
+          }
+        }
+      ]
     }
   },
 
@@ -20,8 +35,8 @@
         "type": {
           "description": "VAST content type",
           "type": "string",
-          "anyOf": [{ "enum": ["VastURL", "VastXML"] }],
-          "default": "VastURL"
+          "anyOf": [{ "enum": ["VastUrl", "VastXml"] }],
+          "default": "VastUrl"
         },
         "content": {
           "description": "VAST URL or content",
