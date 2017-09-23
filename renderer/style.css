@@ -1,0 +1,21 @@
+body {
+  font-family: 'Helvetica';
+  user-select: none;
+}
+
+.title {
+  width: 100%;
+  color: #cfcfcf;
+  text-align: center;
+  -webkit-app-region: drag;
+}
+
+.status {
+  color: #27d882;
+  margin: 0 auto;
+  width: 45px;
+  height: 45px;
+}
+
+.status .red {
+}

@@ -317,6 +317,12 @@
             "corner": { "type": "boolean" }
           }
         },
+        "sticky": {
+          "type": "boolean",
+          "description":
+            "[inBoard only] Make inBoard format stick to the top of the viewport.",
+          "default": true
+        },
         "onlyNative": {
           "type": "boolean",
           "description":

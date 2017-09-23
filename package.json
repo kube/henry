@@ -1,22 +1,31 @@
 {
   "name": "henry",
   "version": "0.0.1",
-  "main": "dist/index.js",
+  "main": "main/dist/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/index"
+    "build": "npm run build:main && npm run build:renderer",
+    "build:main": "tsc -p main",
+    "build:renderer": "tsc -p renderer",
+    "start": "electron ."
   },
   "devDependencies": {
     "@types/finalhandler": "^0.0.32",
     "@types/http-proxy": "^1.12.1",
     "@types/node": "^8.0.28",
+    "@types/react": "^16.0.5",
+    "@types/react-dom": "^15.5.4",
     "@types/serve-static": "^1.7.32",
     "typescript": "^2.5.2"
   },
   "dependencies": {
+    "csx": "^8.5.0",
+    "electron": "^1.7.6",
     "finalhandler": "^1.0.5",
     "http-proxy": "^1.16.2",
-    "serve-static": "^1.12.4"
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "serve-static": "^1.12.4",
+    "typestyle": "^1.4.1"
   }
 }

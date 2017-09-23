@@ -55,6 +55,7 @@
           "launch": "auto",
           "videoStart": "threshold",
           "videoPause": "threshold",
+          "sticky": false,
           "smartPosition": {
             "top": true
           }

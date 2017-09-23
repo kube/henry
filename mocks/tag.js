@@ -8,9 +8,9 @@
     w.teads
       .page(15743)
       .placement(27829, {
-        format: 'inread',
+        format: 'inboard',
         slot: {
-          btf: false,
+          btf: true,
           selector: 'p',
           minimum: 1
         }
