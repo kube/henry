@@ -100,10 +100,9 @@ http
           : 'teads-format.js'
 
         console.log(fileName)
-
-        createReadStream(
-          `/Users/cfeijoo/Code/teads/service-web-formats/framework/format/dist/${fileName}`
-        ).pipe(res)
+        http.get('http://localhost:1337/format.js', _res =>
+          _res.pipe(res)
+        )
       } else if (isEnabled() && isAdRequestUrl(url))
         console.log(':: AD REQUEST URL') ||
           createReadStream(

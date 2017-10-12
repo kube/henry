@@ -1,13 +1,16 @@
 import { Url } from 'url'
 
 export const isTeadsRequestUrl = (url: Url) =>
-  /teads\.tv$/.test(url.hostname!)
+  /teads\.(tv|net)$/.test(url.hostname!)
 
 export const isFormatFrameworkRequestUrl = (url: Url) =>
   isTeadsRequestUrl(url) &&
-  /format\/v3\/teads-format(\.min)?\.js(\.map)?$/.test(
-    url.path!
-  )
+  (/format\/v3\/teads-format(\.min)?\.js(\.map)?$/.test(
+    url.pathname!
+  ) ||
+    /dist\/format\/teads-format(\.min)?\.js(\.map)?$/.test(
+      url.pathname!
+    ))
 
 export const isDailyBugleRequest = (url: Url) =>
   /dailybugle\.com$/.test(url.hostname!)
